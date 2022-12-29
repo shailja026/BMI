@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Basic calculator</title>
+</head>
+<link rel="stylesheet" href="calse.css">
+<body>
+   
+   <div class="container">
+      
+       <div id="out"></div>
+      
+   
+      <tr>
+         <button class="btn">9</button>
+         <button class="btn">8</button>
+         <button class="btn">7</button>
+         <button class="btn">*</button>
+      </tr>
+      <tr>
+         <button class="btn">6</button>
+         <button class="btn">5</button>
+         <button class="btn">4</button>
+         <button class="btn">/</button>
+      </tr>
+      <tr>
+         <button class="btn">3</button>
+         <button class="btn">2</button>
+         <button class="btn">1</button>
+         <button class="btn">-</button>
+      </tr>
+      <tr>
+         <button class="btn">C</button>
+         <button class="btn">0</button>
+         <button class="btn">=</button>
+         <button class="btn">+</button>
+      </tr>
+   </div>
+
+</body>
+
+<script>
+   let output = document.getElementById("out");
+   let ans=""
+   let string="";
+   let buttons = Array.from(document.getElementsByClassName("btn")).forEach((el)=>{
+      el.addEventListener("click",(e)=>{
+         
+        if(e.target.innerText === "C"){
+         // string = eval(string);
+         output.innerText = ""
+         string="";
+
+         console.log(string);
+        } else if (e.target.innerText === "="){
+          ans=eval(string);
+         console.log(ans);
+         string = ans;
+         output.innerText = string;
+         string="";
+         // console.log(string);
+         // output.innerText = string;
+        }else{
+         string += e.target.innerHTML;
+         
+         output.innerText = string;
+          console.log(string);
+        }
+         
+        
+      })
+
+
+     
+   })
+  
+  
+
+
+</script>
+</html>
